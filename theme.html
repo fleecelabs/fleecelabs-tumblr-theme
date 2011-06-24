@@ -114,13 +114,18 @@
     width: 792px;
   }
 
+  .link-post {
+    width: 594px;
+    margin-left: 198px;
+    text-indent: -198px;
+  }
   .link {
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
   }
   .link-text {
-    font-weight: 500;
+    font-weight: 300;
     margin-left: 1em;
     font-size: 13px;
     line-height: 24px;
@@ -143,9 +148,8 @@
   </header>
 
   {block:Posts}
-    <article class=post>
-
-      {block:Text}
+    {block:Text}
+      <article class=post>
         {block:Title}
           <header class=post-header>
             <h1 class=post-heading>{Title}</h1>
@@ -163,9 +167,11 @@
         <div class=text>
           {Body}
         </div>        
-      {/block:Text}
+      </article>
+    {/block:Text}
 
-      {block:Link}
+    {block:Link}
+      <article class='post link-post'>
         <a class=link href={URL} {Target}>{Name}</a>
 
         {block:Description}
@@ -179,11 +185,9 @@
             / {block:Tags}<a class=meta-link href={TagURL}>{Tag}</a> {/block:Tags}
           {/block:HasTags}
         </span>
-      {/block:Link}
-      
-
-    </article>
+      </article>
+    {/block:Link}
+    
   {/block:Posts}
-
 
 </div>
