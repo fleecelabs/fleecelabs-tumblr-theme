@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset=utf-8>
 
@@ -157,73 +156,75 @@
   <script>try{Typekit.load();}catch(e){}</script>
 </head>
 
-<div class='grid clearfix'>
+<body>
+  <div class='grid clearfix'>
 
-  <header class=banner>
-    <h1 class=logo><a href=/ class=logo-link>FLEECELABS</a></h1>
-  </header>
+    <header class=banner>
+      <h1 class=logo><a href=/ class=logo-link>FLEECELABS</a></h1>
+    </header>
 
-  {block:Posts}
-    {block:Text}
-      <article class=post>
-        {block:Title}
-          <header class=post-header>
-            <h1 class=post-heading><a href={Permalink} class=post-heading-link>{Title}</a></h1>
-          </header>
-        {/block:Title}
+    {block:Posts}
+      {block:Text}
+        <article class=post>
+          {block:Title}
+            <header class=post-header>
+              <h1 class=post-heading><a href={Permalink} class=post-heading-link>{Title}</a></h1>
+            </header>
+          {/block:Title}
 
-        <aside class='post-meta post-meta-block'>
-          {PostAuthorName} / 
-          {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
-          {block:HasTags}
-            / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
-          {/block:HasTags}
-        </aside>
+          <aside class='post-meta post-meta-block'>
+            {PostAuthorName} / 
+            {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
+            {block:HasTags}
+              / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
+            {/block:HasTags}
+          </aside>
         
-        <div class=text>
-          {Body}
-        </div>        
-      </article>
-    {/block:Text}
+          <div class=text>
+            {Body}
+          </div>        
+        </article>
+      {/block:Text}
 
-    {block:Link}
-      <article class='post link-post'>
-        <a class=link href='{URL}' {Target}>{Name}</a>
+      {block:Link}
+        <article class='post link-post'>
+          <a class=link href='{URL}' {Target}>{Name}</a>
 
-        {block:Description}
-          <div class=link-text>{Description}</div>
-        {/block:Description}
+          {block:Description}
+            <div class=link-text>{Description}</div>
+          {/block:Description}
 
-        <span class='post-meta post-meta-inline'>
-          {PostAuthorName} / 
-          {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
-          {block:HasTags}
-            / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
-          {/block:HasTags}
-        </span>
-      </article>
-    {/block:Link}
+          <span class='post-meta post-meta-inline'>
+            {PostAuthorName} / 
+            {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
+            {block:HasTags}
+              / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
+            {/block:HasTags}
+          </span>
+        </article>
+      {/block:Link}
     
-    {block:Photo}
-      <article class='post photo-post'>
-        {LinkOpenTag}
-          <img class=photo src={PhotoURL-HighRes} alt='{PhotoAlt}'>
-        {LinkCloseTag}
+      {block:Photo}
+        <article class='post photo-post'>
+          {LinkOpenTag}
+            <img class=photo src={PhotoURL-HighRes} alt='{PhotoAlt}'>
+          {LinkCloseTag}
 
-        {block:Caption}
-          <div class=caption>{Caption}</div>
-        {/block:Caption}
+          {block:Caption}
+            <div class=caption>{Caption}</div>
+          {/block:Caption}
 
-        <span class='post-meta post-meta-inline'>
-          {PostAuthorName} / 
-          {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
-          {block:HasTags}
-            / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
-          {/block:HasTags}
-        </span>
-      </article>
-    {/block:Photo}
+          <span class='post-meta post-meta-inline'>
+            {PostAuthorName} / 
+            {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
+            {block:HasTags}
+              / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
+            {/block:HasTags}
+          </span>
+        </article>
+      {/block:Photo}
     
-  {/block:Posts}
+    {/block:Posts}
 
-</div>
+  </div>
+</body>
