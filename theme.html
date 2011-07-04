@@ -1,157 +1,165 @@
 <!DOCTYPE html>
 
-<meta charset=utf-8>
+<head>
+  <meta charset=utf-8>
 
-<title>
-  {block:SearchPage}{lang:Search results for SearchQuery} –{/block:SearchPage}
-  {block:PostSummary}{PostSummary} –{/block:PostSummary}
-  {block:TagPage}Inlägg taggade ”{Tag}” –{/block:TagPage}
-  {Title}
-</title>
+  <title>
+    {block:SearchPage}{lang:Search results for SearchQuery} –{/block:SearchPage}
+    {block:PostSummary}{PostSummary} –{/block:PostSummary}
+    {block:TagPage}Inlägg taggade ”{Tag}” –{/block:TagPage}
+    {Title}
+  </title>
 
-{block:Description}<meta name=description content='{MetaDescription}'>{/block:Description}
+  {block:Description}<meta name=description content='{MetaDescription}'>{/block:Description}
 
-<link rel='shortcut icon' href={Favicon}>
-<link rel=apple-touch-icon href={PortraitURL-128}>
-<link rel=alternate type=application/rss+xml href={RSS}>
+  <link rel='shortcut icon' href={Favicon}>
+  <link rel=apple-touch-icon href={PortraitURL-128}>
+  <link rel=alternate type=application/rss+xml href={RSS}>
 
-<style>
-  html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
-  .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{zoom:1}*:first-child+html .clearfix{zoom:1}
+  <style>
+    html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+    .clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}* html .clearfix{zoom:1}*:first-child+html .clearfix{zoom:1}
 
-  body {
-    font-family: museo-sans;
-    font-weight: 300;
-    color: #404040;
-    background-color: #f2f0e7;
-  }
+    body {
+      font-family: museo-sans;
+      font-weight: 300;
+      color: #404040;
+      background-color: #f2f0e7;
+    }
 
-  p {
-    margin-bottom: 1em;
-  }
+    p {
+      margin-bottom: 1em;
+    }
 
-  a {
-    color: #404040;
-  }
-  a:hover {
-    color: #ea2b40;
-  }
+    a {
+      color: #404040;
+    }
+    a:hover {
+      color: #ea2b40;
+    }
 
-  strong {
-    font-weight: 700;
-  }
+    strong {
+      font-weight: 700;
+    }
 
-  .grid {
-    width: 792px;
-    margin: 0 auto;
-    clear: both;
-  }
+    .grid {
+      width: 792px;
+      margin: 0 auto;
+      clear: both;
+    }
 
-  .banner {
-    width: 100%;
-    height: 72px;
-    margin-bottom: 90px;
-    position: relative;
-  }
-  .logo {
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    font-size: 48px;
-    line-height: 1;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
-  .logo-link {
-    text-decoration: none;
-    color: #404040;
-  }
+    .banner {
+      width: 100%;
+      height: 72px;
+      margin-bottom: 90px;
+      position: relative;
+    }
+    .logo {
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      font-size: 48px;
+      line-height: 1;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .logo-link {
+      text-decoration: none;
+      color: #404040;
+    }
 
-  .post {
-    margin-bottom: 72px;
-    width: 100%;
-    float: left;
-  }
+    .post {
+      margin-bottom: 72px;
+      width: 100%;
+      float: left;
+    }
 
-  .post-header {
-    width: 100%;
-    float: right;
-  }
-  .post-heading {
-    width: 594px;
-    float: right;
-    font-family: museo-slab;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 1;
-    margin-bottom: 1em;
-  }
-  .post-heading-link {
-    text-decoration: none;
-  }
-  .post-meta {
-    font-size: 11px;
-    font-weight: 500;
-  }
-  .post-meta-inline {
-    line-height: 24px;
-    white-space: nowrap;
-  }
-  .post-meta-block {
-    width: 162px;
-    float: left;
-    margin-top: 5px;
-    line-height: 18px;
-  }
-  .meta-link {
-    text-decoration: none;
-  }
-  .text {
-    width: 594px;
-    float: right;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  .text img {
-    width: 100%
-  }
+    .post-header {
+      width: 100%;
+      float: right;
+    }
+    .post-heading {
+      width: 594px;
+      float: right;
+      font-family: museo-slab;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 1em;
+    }
+    .post-heading-link {
+      text-decoration: none;
+    }
+    .post-meta {
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .post-meta-inline {
+      line-height: 24px;
+      white-space: nowrap;
+    }
+    .post-meta-block {
+      width: 162px;
+      float: left;
+      margin-top: 5px;
+      line-height: 18px;
+    }
+    .meta-link {
+      text-decoration: none;
+    }
+    .text {
+      width: 594px;
+      float: right;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .text img {
+      width: 100%
+    }
 
-  .photo {
-    width: 792px;
-  }
+    .photo {
+      width: 792px;
+    }
+    .caption {
+      font-size: 16px;
+      line-height: 24px;
+      display: inline;
+    }
+    .caption>p {display: inline;}
 
-  .link-post {
-    width: 594px;
-    margin-left: 198px;
-    text-indent: -198px;
-  }
-  .link {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    margin-right: 1em;
-  }
-  .link-text {
-    font-weight: 300;
-    margin-right: 1em;
-    font-size: 13px;
-    line-height: 24px;
-    display: inline;
-  }
-  .link-text>p {display: inline;}
-</style>
+    .link-post {
+      width: 594px;
+      margin-left: 198px;
+      text-indent: -198px;
+    }
+    .link {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      margin-right: 1em;
+    }
+    .link-text {
+      font-weight: 300;
+      margin-right: 1em;
+      font-size: 13px;
+      line-height: 24px;
+      display: inline;
+    }
+    .link-text>p {display: inline;}
+  </style>
 
-<script>
-  /*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/
-</script>
+  <script>
+    /*@cc_on'abbr article aside audio canvas details figcaption figure footer header hgroup mark meter nav output progress section summary time video'.replace(/\w+/g,function(n){document.createElement(n)})@*/
+  </script>
 
-<script src=http://use.typekit.com/cmb8gnn.js></script>
-<script>try{Typekit.load();}catch(e){}</script>
+  <script src=http://use.typekit.com/cmb8gnn.js></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
 
 <div class='grid clearfix'>
 
   <header class=banner>
-    <h1 class=logo><a href=/ class=logo-link>FLEECELABS</a></h1></h1>
+    <h1 class=logo><a href=/ class=logo-link>FLEECELABS</a></h1>
   </header>
 
   {block:Posts}
@@ -179,7 +187,7 @@
 
     {block:Link}
       <article class='post link-post'>
-        <a class=link href={URL} {Target}>{Name}</a>
+        <a class=link href='{URL}' {Target}>{Name}</a>
 
         {block:Description}
           <div class=link-text>{Description}</div>
@@ -194,6 +202,26 @@
         </span>
       </article>
     {/block:Link}
+    
+    {block:Photo}
+      <article class='post photo-post'>
+        {LinkOpenTag}
+          <img class=photo src={PhotoURL-HighRes} alt='{PhotoAlt}'>
+        {LinkCloseTag}
+
+        {block:Caption}
+          <div class=caption>{Caption}</div>
+        {/block:Caption}
+
+        <span class='post-meta post-meta-inline'>
+          {PostAuthorName} / 
+          {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
+          {block:HasTags}
+            / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
+          {/block:HasTags}
+        </span>
+      </article>
+    {/block:Photo}
     
   {/block:Posts}
 
