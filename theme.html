@@ -147,6 +147,53 @@
       display: inline;
     }
     .link-text>p {display: inline;}
+
+    .quote {
+      width: 504px;
+      margin-left: 90px;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 24px;
+    }
+    .quote-text {
+      width: 504px;
+      margin-left: 114px;
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 24px;
+      text-decoration: none;
+    }
+    .quote-text:before {
+      content: '– ';
+    }
+    .quote-text>p {display: inline;}
+    .quote-post-meta {
+      float: right;
+      margin-top: 4px;
+    }
+
+    .footer {
+      margin-top: 72px;
+      border-top: 1px solid #d9d6cf;
+      padding-top: 4px;
+      width: 100%;
+      height: 84px;
+      float: left;
+    }
+    .pagination {
+      color: #404040;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 24px;
+      display: block;
+    }
+    .back-pagination {
+      float: left;
+    }
+    .forward-pagination {
+      float: right;
+    }
   </style>
 
   <script>
@@ -225,7 +272,39 @@
         </article>
       {/block:Photo}
     
+      {block:Quote}
+        <article class='post quote-post'>
+          <aside class='post-meta post-meta-block quote-post-meta'>
+            {PostAuthorName} / 
+            {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
+            {block:HasTags}
+              / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
+            {/block:HasTags}
+          </aside>
+
+          <div class=quote>
+            {Quote}
+          </div>
+          
+          {block:Source}
+            <div class=quote-text>{Source}</div>
+          {/block:Source}
+        </article>
+      {/block:Quote}
+    
+    
     {/block:Posts}
 
+    <footer class=footer>
+      {block:Pagination}
+        {block:NextPage}
+          <a class='pagination back-pagination' href={NextPage}>&larr; Tidigare bloggposter</a>
+        {/block:NextPage}	
+        {block:PreviousPage}
+          <a class='pagination forward-pagination' href={PreviousPage}>Senare bloggposter &rarr;</a>
+        {/block:PreviousPage}	
+      {/block:Pagination}
+    </footer>
+    
   </div>
 </body>
