@@ -26,10 +26,6 @@
       background-color: #f2f0e7;
     }
 
-    p {
-      margin-bottom: 1em;
-    }
-
     a {
       color: #404040;
     }
@@ -113,6 +109,17 @@
       font-size: 16px;
       line-height: 24px;
     }
+    .text > p {
+      margin-bottom: 12px;
+    }
+    .text > ul {
+      list-style-type: disc;
+      margin-bottom: 12px;
+    }
+    .text > ol {
+      list-style-type: decimal;
+      margin-bottom: 12px;
+    }
     .text img {
       width: 100%
     }
@@ -146,7 +153,7 @@
       line-height: 24px;
       display: inline;
     }
-    .link-text>p {display: inline;}
+    .link-text > p {display: inline;}
 
     .quote {
       width: 504px;
@@ -166,7 +173,7 @@
     .quote-text:before {
       content: '– ';
     }
-    .quote-text>p {display: inline;}
+    .quote-text > p {display: inline;}
     .quote-post-meta {
       float: right;
       margin-top: 4px;
@@ -291,7 +298,6 @@
           {/block:Source}
         </article>
       {/block:Quote}
-    
     
     {/block:Posts}
 
