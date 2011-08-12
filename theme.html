@@ -131,14 +131,15 @@
 
     .photo {
       width: 792px;
+      margin-bottom: 6px;
     }
-    .caption {
-      font-size: 16px;
+    .caption-text {
+      font-size: 13px;
       line-height: 24px;
       margin-right: 1em;
       display: inline;
     }
-    .caption>p {display: inline;}
+    .caption-text > p {display: inline;}
 
     .link-post {
       width: 504px;
@@ -265,23 +266,25 @@
       {/block:Link}
     
       {block:Photo}
-        <article class='post photo-post'>
+        <figure class='post photo-post'>
           {LinkOpenTag}
             <img class=photo src={PhotoURL-HighRes} alt='{PhotoAlt}'>
           {LinkCloseTag}
 
-          {block:Caption}
-            <div class=caption>{Caption}</div>
-          {/block:Caption}
+          <figcaption>
+            {block:Caption}
+              <div class=caption-text>{Caption}</div>
+            {/block:Caption}
 
-          <span class='post-meta post-meta-inline'>
-            {PostAuthorName} / 
-            {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
-            {block:HasTags}
-              / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
-            {/block:HasTags}
-          </span>
-        </article>
+            <span class='post-meta post-meta-inline'>
+              {PostAuthorName} / 
+              {block:Date}<a href={Permalink} class=meta-link>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}&nbsp;{24HourWithZero}:{Minutes}</a>{/block:Date}
+              {block:HasTags}
+                / {block:Tags}<a href={TagURL} class=meta-link>{Tag}</a> {/block:Tags}
+              {/block:HasTags}
+            </span>
+          </figcaption>
+        </figure>
       {/block:Photo}
     
       {block:Quote}
